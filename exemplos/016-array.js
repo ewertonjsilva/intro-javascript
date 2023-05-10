@@ -18,7 +18,15 @@ let alunos = [
     'Teófilo Trajano', 
     'Raíssa Rebeca', 
     'Carlos Caetano', 
-    'Helna Harris'
+    'Helna Harris', 
+    'Ewerton Estones'
 ];
 
-console.log(alunos);
+console.log('Lista de alunos: '); 
+
+for (let n = 0; n < alunos.length; n++) {
+    console.log('- ' + alunos[n]);
+}
+
+console.log('');
+console.log('Fim do programa');
