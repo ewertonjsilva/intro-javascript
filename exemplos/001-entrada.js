@@ -5,3 +5,4 @@ let entrada = require('prompt-sync')();
 
 let nome = entrada('Digite seu nome: ');
 console.log('O nome digitado foi: ' + nome);
+

@@ -10,14 +10,37 @@ let resMegaSena = [];
 let meuJogo = []; 
 let acertos = 0; 
 
+function verificarRepeticao(nVerificar, arr ) { 
+    let repetido = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (nVerificar == arr[i]) {
+            repetido++;
+        }
+    }
+    if (repetido > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 for (let i = 0; i < 6; i++) {
     const numero = Math.floor(Math.random() * 60) + 1;
-    resMegaSena.push(numero);
+    if (verificarRepeticao(numero, resMegaSena)) {
+        i--;
+    } else {
+        resMegaSena.push(numero);
+    }
+    
 }
 
 for (let i = 1; i <= 6; i++) {
-    let numero = entrada('Digite o ' + i + 'º nº do jogo: ');
-    meuJogo.push(numero);
+    let numero = entrada('Digite o ' + i + 'º nº do jogo: '); 
+    if (verificarRepeticao(numero, meuJogo)) {
+        i--;
+    } else{
+        meuJogo.push(numero);
+    }    
 }
 
 for (let nMega = 0; nMega < resMegaSena.length; nMega++) {
